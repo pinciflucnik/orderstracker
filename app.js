@@ -1,14 +1,14 @@
-import page from "../node_modules/page/page.mjs";
-import * as api from "./service/api.js";
-import { html, render } from "../node_modules/lit-html/lit-html.js";
-import { loginView } from "./views/login.js";
-import { ordersView } from "./views/orderList.js";
-import { registerView } from "./views/register.js";
-import { userData } from "./service/userData.js"
-import { homeView } from "./views/home.js";
-import { addView } from "./views/addOrder.js";
-import { userService } from "./service/userService.js";
-import { completedView } from "./views/completed.js";
+import page from "./page.mjs";
+import * as api from "./api.js";
+import { html, render } from "./lit-html.js";
+import { loginView } from "./login.js";
+import { ordersView } from "./orderList.js";
+import { registerView } from "./register.js";
+import { userData } from "./userData.js"
+import { homeView } from "./home.js";
+import { addView } from "./addOrder.js";
+import { userService } from "./userService.js";
+import { completedView } from "./completed.js";
 
 let root = document.getElementById('container');
 let navRoot = document.querySelector('body nav');
