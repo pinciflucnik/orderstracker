@@ -53,7 +53,7 @@ async function onRegister(e){
     try {
         await userService.register(username, email, password)
         // await user.signUp();
-        alert ('Регистриран сте успешно!)
+        alert ('Регистриран сте успешно!')
         context.redirect('/login')
     } catch (error) {
         alert (`Възникна грешка - кажи на Владо (${error.message})`)
