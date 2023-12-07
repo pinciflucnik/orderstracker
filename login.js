@@ -1,5 +1,5 @@
-import { html } from "../../node_modules/lit-html/lit-html.js";
-import { userService } from "../service/userService.js";
+import { html } from "./lit-html.js";
+import { userService } from "./userService.js";
 
 
 
