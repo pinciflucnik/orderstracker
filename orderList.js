@@ -1,5 +1,5 @@
-import { html } from "../../node_modules/lit-html/lit-html.js";
-import { onArrive } from "../service/onArrive.js";
+import { html } from "./lit-html.js";
+import { onArrive } from "./onArrive.js";
 
 const allOrdersTemp = (list, currentDate,onArrive,username,buttonTemp) => html`
         <table class="table table-dark table-striped">
