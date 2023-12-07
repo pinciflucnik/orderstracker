@@ -1,0 +1,26 @@
+.wrapper {
+    text-align: center;
+
+}
+#container {
+    background-color: #70747c;
+}
+.form-control {
+    size: 200px;
+    text-align: center;
+}
+.form {
+    align-content: center;
+}
+h1 {
+    text-align: center;
+}
+.intro {
+    text-align: center;
+}
+.sign {
+    text-align: end;
+}
+td {
+    text-align: center;
+}
