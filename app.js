@@ -63,7 +63,7 @@ function navUpdate(ctx, next){
             </div>
 
     `
-    let user = localStorage.getItem('user');
+    let user = sessionStorage.getItem('user');
 
     render(navTemp(user,userTemp, guestTemp),navRoot);
 
