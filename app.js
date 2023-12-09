@@ -50,16 +50,17 @@ function navUpdate(ctx, next){
     `
     const guestTemp = () => html`
             <div class="navbar-nav">
-                <a class="nav-link" href="/login">Login</a>
-                <a class="nav-link" href="/register">Register</a>
+                <a class="nav-link" href="/login">Влез</a>
+                <a class="nav-link" href="/register">Регистрация</a>
             </div>
 
     `
     const userTemp = () => html`
             <div class="navbar-nav">
-                <a class="nav-link" href="/addOrder">Add new order</a>
-                <a class="nav-link" href="/completed">List of completed orders</a>
-                <a class="nav-link" href="/logout">Logout</a>
+                <a class="nav-link" href="/orders">Списък с незавършени поръчки</a>
+                <a class="nav-link" href="/addOrder">Нова поръчка</a>
+                <a class="nav-link" href="/completed">Списък със завършени поръчки</a>
+                <a class="nav-link" href="/logout">Излез</a>
             </div>
 
     `
