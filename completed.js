@@ -5,15 +5,15 @@ const compTemp = (list) => html`
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                <th scope="col">Client Number</th>
-                <th scope="col">Client Name</th>
-                <th scope="col">Article number</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Ordered from</th>
-                <th scope="col">Ordered/Ticket number</th>
-                <th scope="col">Order placed on</th>
-                <th scope="col">Arrived on</th>
-                <th scope="col">Created by</th>
+                <th scope="col">Клиентски номер</th>
+                <th scope="col">Клиент</th>
+                <th scope="col">Артикул</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Поръчан през</th>
+                <th scope="col">Номер поръчка/тикет</th>
+                <th scope="col">Поръчан на</th>
+                <th scope="col">Пристигнал на</th>
+                <th scope="col">Създаден от</th>
             </tr>
             </thead>
             <tbody>

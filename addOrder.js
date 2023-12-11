@@ -8,38 +8,38 @@ const addTemp = (onCreate) => html `
             <h2>New order</h2>
             <form @submit=${onCreate} class="form">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Client number</label>
+                    <label for="exampleFormControlInput1" class="form-label">Клиентски номер</label>
                     <input type="text" name="clientNumber" class="form-control"  placeholder="B00000">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Client Name</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Клиент</label>
                     <input type="text" name="clientName" class="form-control"  placeholder="ф-ма Антон Гайтанов">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Article Number</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Артикул</label>
                     <input type="text" name="articleNumber" class="form-control"  placeholder="1K0803899D">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Quantity</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Количество</label>
                     <input type="number" name="quantity" class="form-control"  placeholder="0">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Ordered from</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Поръчан през</label>
                     <select class="form-select" name="orderedFrom" aria-label="Default select example">
                     <option>Marketplace</option>
                     <option>JIRA ticketing service</option>
                     </select>                
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Order/Ticket number</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Номер поръчка/тикет</label>
                     <input type="text" name="orderNumber" class="form-control"  placeholder="HCBG-39923">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Oder placed on</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Поръчан на</label>
                     <input type="text" name="orderDate" class="form-control"  value=${new Date()}>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Expected Delivery</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Очакван на</label>
                     <input type="date" name="expected" class="form-control"  placeholder="password">
                 </div>
                 <button type="submit" class="btn btn-dark">Add new order</button>
