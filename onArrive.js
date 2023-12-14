@@ -1,5 +1,5 @@
-import * as api from "./api.js"
-import page from "./page.mjs"
+import * as api from "./api.js";
+import page from "./page.mjs";
 
 export async function onArrive(e){
 

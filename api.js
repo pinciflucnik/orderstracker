@@ -16,9 +16,6 @@ async function request (method, url, data) {
     }
     
     const userInfo = userData.getData();
-    // if (userInfo){
-
-    // }
 
     try {
         const response = await fetch(host + url,options);
@@ -38,10 +35,6 @@ async function request (method, url, data) {
     }
 }
 
-// export const get = request.bind(null,'get');
-// export const post = request.bind(null,'post');
-// export const put = request.bind(null,'put');
-// export const del = request.bind(null,'delete');
 
 export function get(url){
     return request('GET', url);
@@ -60,6 +53,3 @@ window.api = {
     request
 };
 
-// import * as api from "./api.js";
-
-// window.api = api;

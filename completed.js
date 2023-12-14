@@ -35,6 +35,7 @@ const orderTemp = (order) => html`
                 </tr>
 `
 export async function completedView(ctx) {
+    ctx.loader();
     let list = await ctx.api.get('/parse/classes/completed');
     ctx.render(compTemp(list.results))
 }

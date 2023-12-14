@@ -5,7 +5,7 @@ import {
 
 const addTemp = (onCreate) => html `
         <div class="wrapper">
-            <h2>New order</h2>
+            <h2>Нова поръчка</h2>
             <form @submit=${onCreate} class="form">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Клиентски номер</label>
@@ -42,7 +42,7 @@ const addTemp = (onCreate) => html `
                     <label for="exampleFormControlTextarea1" class="form-label">Очакван на</label>
                     <input type="date" name="expected" class="form-control"  placeholder="password">
                 </div>
-                <button type="submit" class="btn btn-dark">Add new order</button>
+                <button type="submit" class="btn btn-dark">Добави поръчка</button>
             </form>
         </div>
 
@@ -84,7 +84,6 @@ async function onCreate(e) {
 
     try {
         let response = await context.api.post('/parse/classes/Order',newOrder);
-        console.log(response);
     } catch (error) {
         alert(`Нещо се обърка - прати грешката на Владо --> ${error.message}`);
     }

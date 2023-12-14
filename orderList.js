@@ -85,6 +85,7 @@ const notLogged = () => html`
 `
 
 export async function ordersView(ctx) {
+    ctx.loader();
     let list = await ctx.api.get('/parse/classes/Order');
     let user = ctx.userData.getData();
     let username = user.username;

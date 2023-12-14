@@ -3,12 +3,13 @@ import * as api from "./api.js";
 import { html, render } from "./lit-html.js";
 import { loginView } from "./login.js";
 import { ordersView } from "./orderList.js";
-import { registerView } from "./register.js";
+// import { registerView } from "./register.js";
 import { userData } from "./userData.js"
 import { homeView } from "./home.js";
 import { addView } from "./addOrder.js";
 import { userService } from "./userService.js";
 import { completedView } from "./completed.js";
+import { loader } from "./loader.js";
 
 let root = document.getElementById('container');
 let navRoot = document.querySelector('body nav');
@@ -16,7 +17,7 @@ page(ctxDecoration);
 page(navUpdate);
 page('/', homeView)
 page('/login', loginView);
-page('/register', registerView);
+// page('/register', registerView);
 page('/orders', ordersView);
 page('/logout', logout);
 page('/addOrder', addView);
@@ -29,6 +30,7 @@ function ctxDecoration(ctx, next){
     ctx.redirect = page.redirect;
     ctx.api = api;
     ctx.userData = userData;
+    ctx.loader = loader;
 
     next();
 }
@@ -50,7 +52,7 @@ function navUpdate(ctx, next){
     const guestTemp = () => html`
             <div class="navbar-nav">
                 <a class="nav-link" href="/login">Влез</a>
-                <a class="nav-link" href="/register">Регистрация</a>
+                <!-- <a class="nav-link" href="/register">Регистрация</a> -->
             </div>
 
     `
@@ -72,10 +74,11 @@ function navUpdate(ctx, next){
 }
 
 async function logout(ctx) {
-    let isconfirmed = confirm ('Are you sure you want to logout?');
+    let isconfirmed = confirm ('Сигурен ли си?');
     if (!isconfirmed){
         return;
     }
+    ctx.loader();
     await userService.logout();
     ctx.redirect('/');
 }

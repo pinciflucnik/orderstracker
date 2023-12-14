@@ -2,7 +2,6 @@ import { html } from "./lit-html.js";
 import { userService } from "./userService.js";
 
 
-
 const loginTemp = (onLogin) => html`
         <div class="wrapper">
             <h2>Login</h2>
@@ -27,6 +26,7 @@ export function loginView(ctx){
 
 async function onLogin(e){
     e.preventDefault();
+    context.loader();
     let {username, password} = Object.fromEntries(new FormData(e.target));
 
     if (!username || !password){
@@ -34,18 +34,6 @@ async function onLogin(e){
         return
     }
 
-    // try {
-    //     let response = await Parse.User.logIn(username, password);
-    //     let user = {
-    //         'token': response.getSessionToken(),
-    //         'userID': response.id,
-    //         'username': response.getUsername()
-    //     };
-    //     localStorage.setItem('user', JSON.stringify(user));
-    //     context.redirect('/orders')
-    // } catch (error) {
-    //     alert (`Нещо се обърка. Владо не знае какво прави. Прати му грешката, моля -> ${error.message}`)
-    // }
     try {
         let user = await userService.login(username, password);
         context.userData.setData(user);
