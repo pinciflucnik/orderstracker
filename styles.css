@@ -26,6 +26,7 @@ td {
 }
 body {
     background: #70747c;
+    width: auto;
 }
 .loader {
     border: 16px solid #ffffff;
