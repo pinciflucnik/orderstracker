@@ -1,7 +1,7 @@
 import { html } from "./lit-html.js";
 import { onArrive } from "./onArrive.js";
 
-const allOrdersTemp = (list, currentDate,onArrive,username,buttonTemp) => html`
+const allOrdersTemp = (list, currentDate,onArrive,username,buttonTemp, isAdmin) => html`
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -18,17 +18,17 @@ const allOrdersTemp = (list, currentDate,onArrive,username,buttonTemp) => html`
             </tr>
             </thead>
             <tbody>
-                ${list.map((order)=> temp(order,currentDate,onArrive,username,buttonTemp))}
+                ${list.map((order)=> temp(order,currentDate,onArrive,username,buttonTemp,isAdmin))}
             </tbody>
         </table>
 `
-const temp = (order, currentDate,onArrive,username) => html`
-${Date.parse(order.expected) > Date.parse(currentDate)? orderTemp(order,onArrive,username,buttonTemp)
-: Date.parse(order.expected) < Date.parse(currentDate) ? rowDanger(order,onArrive,username,buttonTemp)
-: rowWarning(order,onArrive,username,buttonTemp)}
+const temp = (order, currentDate,onArrive,username,isAdmin) => html`
+${Date.parse(order.expected) > Date.parse(currentDate)? orderTemp(order,onArrive,username,buttonTemp,isAdmin)
+: Date.parse(order.expected) < Date.parse(currentDate) ? rowDanger(order,onArrive,username,buttonTemp,isAdmin)
+: rowWarning(order,onArrive,username,buttonTemp,isAdmin)}
 `
 
-const orderTemp = (order,onArrive,username,buttonTemp) => html`
+const orderTemp = (order,onArrive,username,buttonTemp,isAdmin) => html`
                 <tr id=${order.objectId}>
                     <td>${order.clientNumber}</td>
                     <td>${order.clientName}</td>
@@ -39,11 +39,11 @@ const orderTemp = (order,onArrive,username,buttonTemp) => html`
                     <td>${order.orderDate.slice(3,15)}</td>
                     <td>${order.expected.slice(3,15)}</td>
                     <td>${order.creator}</td>
-                    ${order.creator == username ? html`<td>${buttonTemp(onArrive)}</td>`: html`<td></td>`}
+                    ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
                 </tr>
 
 `
-const rowWarning = (order,onArrive,username,buttonTemp) => html`
+const rowWarning = (order,onArrive,username,buttonTemp,isAdmin) => html`
     <tr class="table-warning" id=${order.objectId}>
         <td>${order.clientNumber}</td>
         <td>${order.clientName}</td>
@@ -54,11 +54,11 @@ const rowWarning = (order,onArrive,username,buttonTemp) => html`
         <td>${order.orderDate.slice(3,15)}</td>
         <td>${order.expected.slice(3,15)}</td>
         <td>${order.creator}</td>
-        ${order.creator == username ? html`<td>${buttonTemp(onArrive)}</td>`: html`<td></td>`}
+        ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
     </tr>
 `
 
-const rowDanger = (order,onArrive,username,buttonTemp) => html`
+const rowDanger = (order,onArrive,username,buttonTemp,isAdmin) => html`
     <tr class="table-danger" id=${order.objectId}>
         <td>${order.clientNumber}</td>
         <td>${order.clientName}</td>
@@ -69,13 +69,13 @@ const rowDanger = (order,onArrive,username,buttonTemp) => html`
         <td>${order.orderDate.slice(3,15)}</td>
         <td>${order.expected.slice(3,15)}</td>
         <td>${order.creator}</td>
-        ${order.creator == username ? html`<td>${buttonTemp(onArrive)}</td>`: html`<td></td>`}
+        ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
     </tr>
 
 `
-const buttonTemp = (onArrive) => html`
-    <button @click=${onArrive} type="button" class="btn btn-secondary">Завърши</button>
-`
+const buttonTemp = (onArrive,order) => html`
+    <button @click=${onArrive} type="button" class="btn btn-secondary completed">Завърши</button>
+    <a href="/edit/${order.objectId}" class="buttonClass">Промени</a>`
 
 const noOrders = () => html`
     <h1>Все още няма поръчки!</h1>
@@ -89,6 +89,7 @@ export async function ordersView(ctx) {
     let list = await ctx.api.get('/parse/classes/Order');
     let user = ctx.userData.getData();
     let username = user.username;
+    let isAdmin = false;
     if(!user){
         ctx.render(notLogged());
         return;
@@ -97,8 +98,11 @@ export async function ordersView(ctx) {
         ctx.render(noOrders());
         return;
     }
+    if (username === "Владо"){
+        isAdmin = true;
+    }
     let currentDate = new Date();
-    ctx.render(allOrdersTemp(list.results,currentDate,onArrive,username,buttonTemp));
+    ctx.render(allOrdersTemp(list.results,currentDate,onArrive,username,buttonTemp,isAdmin));
 
 }
 

@@ -10,6 +10,7 @@ import { addView } from "./addOrder.js";
 import { userService } from "./userService.js";
 import { completedView } from "./completed.js";
 import { loader } from "./loader.js";
+import { editView } from "./editView.js";
 
 let root = document.getElementById('container');
 let navRoot = document.querySelector('body nav');
@@ -22,6 +23,7 @@ page('/orders', ordersView);
 page('/logout', logout);
 page('/addOrder', addView);
 page('/completed', completedView);
+page('/edit/:id', editView);
 page.start()
 
 

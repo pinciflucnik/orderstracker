@@ -8,39 +8,39 @@ const addTemp = (onCreate) => html `
             <h2>Нова поръчка</h2>
             <form @submit=${onCreate} class="form">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Клиентски номер</label>
+                    <label for="clientNumber" class="form-label">Клиентски номер</label>
                     <input type="text" name="clientNumber" class="form-control"  placeholder="B00000">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Клиент</label>
+                    <label for="clientName" class="form-label">Клиент</label>
                     <input type="text" name="clientName" class="form-control"  placeholder="ф-ма Антон Гайтанов">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Артикул</label>
+                    <label for="articleNumber" class="form-label">Артикул</label>
                     <input type="text" name="articleNumber" class="form-control"  placeholder="1K0803899D">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Количество</label>
+                    <label for="quantity" class="form-label">Количество</label>
                     <input type="number" name="quantity" class="form-control"  placeholder="0">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Поръчан през</label>
+                    <label for="orderedFrom" class="form-label">Поръчан през</label>
                     <select class="form-select" name="orderedFrom" aria-label="Default select example">
                     <option>Marketplace</option>
                     <option>JIRA ticketing service</option>
                     </select>                
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Номер поръчка/тикет</label>
+                    <label for="orderNumber" class="form-label">Номер поръчка/тикет</label>
                     <input type="text" name="orderNumber" class="form-control"  placeholder="HCBG-39923">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Поръчан на</label>
+                    <label for="orderDate" class="form-label">Поръчан на</label>
                     <input type="text" name="orderDate" class="form-control"  value=${new Date()}>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Очакван на</label>
-                    <input type="date" name="expected" class="form-control"  placeholder="password">
+                    <label for="expected" class="form-label">Очакван на</label>
+                    <input type="date" name="expected" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-dark">Добави поръчка</button>
             </form>
