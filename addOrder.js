@@ -77,11 +77,15 @@ async function onCreate(e) {
     articleNumber = articleNumber.toUpperCase();
     orderNumber = orderNumber.toUpperCase();
     expected = new Date(expected).toString();
+    let branch = undefined;
+
+    if (user.username == "Дани" || user.username == "Силвен" || user.username == "Георги" || user.username == "Роби М" || user.username == "Александър" || user.username == "Пейо"){
+        branch = "B21";
+    }
 
 
 
-    let newOrder = {clientNumber,clientName,articleNumber,quantity,orderedFrom,orderNumber,orderDate,expected,creator}
-
+    let newOrder = {clientNumber,clientName,articleNumber,quantity,orderedFrom,orderNumber,orderDate,expected,creator,branch}
     try {
         let response = await context.api.post('/parse/classes/Order',newOrder);
     } catch (error) {

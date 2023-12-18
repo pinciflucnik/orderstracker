@@ -7,8 +7,8 @@ const userEndPoints = {
     register: "/parse/users"
 }
 
-async function register(username, email, password) {
-    const data = await api.post(userEndPoints.register, {username, email, password});
+async function register(username, email, password, branch) {
+    const data = await api.post(userEndPoints.register, {username, email, password, branch});
     return data;
 }
 

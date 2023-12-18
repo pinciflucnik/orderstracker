@@ -94,12 +94,25 @@ export async function ordersView(ctx) {
         ctx.render(notLogged());
         return;
     }
+    if (username === "Владо" || username === "тест"){
+        isAdmin = true;
+    }
+    if (user.username == "Дани" || user.username == "Силвен" || user.username == "Георги" || user.username == "Роби М" || user.username == "Александър" || user.username == "Пейо" || user.username == "тест"){
+        list.results = list.results.filter((order)=> {
+            if (order.branch){
+                return order;
+            }
+        })
+    } else {
+        list.results = list.results.filter((order)=> {
+            if (!order.branch){
+                return order;
+            }
+        })
+    }
     if (list.results.length == 0){
         ctx.render(noOrders());
         return;
-    }
-    if (username === "Владо"){
-        isAdmin = true;
     }
     let currentDate = new Date();
     ctx.render(allOrdersTemp(list.results,currentDate,onArrive,username,buttonTemp,isAdmin));

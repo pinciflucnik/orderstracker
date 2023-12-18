@@ -22,6 +22,10 @@ const registerTemp = (onRegister) => html`
                     <label for="exampleFormControlTextarea1" class="form-label">Password</label>
                     <input type="password" name="rePass" class="form-control"  placeholder="password">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Branch</label>
+                    <input type="text" name="branch" class="form-control"  placeholder="B21/B49">
+                </div>
                 <button type="submit" class="btn btn-dark">Register</button>
             </form>
         </div>
@@ -35,8 +39,8 @@ export function registerView(ctx){
 
 async function onRegister(e){
     e.preventDefault();
-    let {username, email, password, rePass} = Object.fromEntries(new FormData(e.target));
-    if (!username || !email || !password){
+    let {username, email, password, rePass, branch} = Object.fromEntries(new FormData(e.target));
+    if (!username || !email || !password || !branch){
         alert ('Трябва да попълниш всички полета');
         return;
     }
@@ -51,7 +55,7 @@ async function onRegister(e){
     // user.set('password', password);
 
     try {
-        await userService.register(username, email, password)
+        await userService.register(username, email, password, branch)
         // await user.signUp();
         alert ('Регистриран сте успешно!')
         context.redirect('/login')
