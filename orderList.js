@@ -22,7 +22,7 @@ const allOrdersTemp = (list, currentDate,onArrive,username,buttonTemp, isAdmin) 
             </tbody>
         </table>
 `
-const temp = (order, currentDate,onArrive,username,isAdmin) => html`
+const temp = (order, currentDate,onArrive,username,buttonTemp,isAdmin) => html`
 ${Date.parse(order.expected) > Date.parse(currentDate)? orderTemp(order,onArrive,username,buttonTemp,isAdmin)
 : Date.parse(order.expected) < Date.parse(currentDate) ? rowDanger(order,onArrive,username,buttonTemp,isAdmin)
 : rowWarning(order,onArrive,username,buttonTemp,isAdmin)}
@@ -103,6 +103,5 @@ export async function ordersView(ctx) {
     }
     let currentDate = new Date();
     ctx.render(allOrdersTemp(list.results,currentDate,onArrive,username,buttonTemp,isAdmin));
-
 }
 

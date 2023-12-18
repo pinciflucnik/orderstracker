@@ -3,7 +3,7 @@ import * as api from "./api.js";
 import { html, render } from "./lit-html.js";
 import { loginView } from "./login.js";
 import { ordersView } from "./orderList.js";
-// import { registerView } from "./register.js";
+import { registerView } from "./register.js";
 import { userData } from "./userData.js"
 import { homeView } from "./home.js";
 import { addView } from "./addOrder.js";
@@ -18,7 +18,7 @@ page(ctxDecoration);
 page(navUpdate);
 page('/', homeView)
 page('/login', loginView);
-// page('/register', registerView);
+page('/register', registerView);
 page('/orders', ordersView);
 page('/logout', logout);
 page('/addOrder', addView);
