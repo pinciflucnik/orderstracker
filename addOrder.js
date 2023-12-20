@@ -9,15 +9,15 @@ const addTemp = (onCreate) => html `
             <form @submit=${onCreate} class="form">
                 <div class="mb-3">
                     <label for="clientNumber" class="form-label">Клиентски номер</label>
-                    <input type="text" name="clientNumber" class="form-control"  placeholder="B00000">
+                    <input type="text" name="clientNumber" class="form-control"  placeholder="клиентски номер">
                 </div>
                 <div class="mb-3">
                     <label for="clientName" class="form-label">Клиент</label>
-                    <input type="text" name="clientName" class="form-control"  placeholder="ф-ма Антон Гайтанов">
+                    <input type="text" name="clientName" class="form-control"  placeholder="име на фирма">
                 </div>
                 <div class="mb-3">
                     <label for="articleNumber" class="form-label">Артикул</label>
-                    <input type="text" name="articleNumber" class="form-control"  placeholder="1K0803899D">
+                    <input type="text" name="articleNumber" class="form-control"  placeholder="артикулен номер">
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Количество</label>
@@ -32,7 +32,7 @@ const addTemp = (onCreate) => html `
                 </div>
                 <div class="mb-3">
                     <label for="orderNumber" class="form-label">Номер поръчка/тикет</label>
-                    <input type="text" name="orderNumber" class="form-control"  placeholder="HCBG-39923">
+                    <input type="text" name="orderNumber" class="form-control"  placeholder="номер на поръчка или тикет">
                 </div>
                 <div class="mb-3">
                     <label for="orderDate" class="form-label">Поръчан на</label>
