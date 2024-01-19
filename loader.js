@@ -2,7 +2,7 @@ import { html, render } from "./lit-html.js";
 
 const loaderTemp = () => html`
         <div class="container">
-            <img src="pinci-modified-resized.png" class="loader" alt="pinci-logo">
+            <p class="special loader">pinci</p>
         </div>
 `
 
