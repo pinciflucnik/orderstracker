@@ -103,12 +103,14 @@ body {
     padding: 0px 0px;
   }
   .btn-login, .btn-reg {
-    background-color: #768d87;
+    background-color: rgb(87, 87, 87);
     color: white;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0, 0.5);
+    border-radius: 7px;
+    border: 1px solid rgba(87, 87, 87, 0.5);
+    padding: 5px 25px;
   }
   .btn-login:hover, .btn-reg:hover{
-    background-color: rgb(54, 52, 52);
+    background-color: rgb(211, 208, 180);
     border: 1px solid #768d87;
+    color: rgb(87, 87, 87);
   }
