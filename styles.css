@@ -1,7 +1,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
 @font-face {
     font-family: "pinin";
-    src: url(/pininfarina\ font.ttf);
+    src: url(pininfarina.ttf);
 }
 .wrapper {
     text-align: center;
@@ -45,9 +45,12 @@ body {
     animation: loader-animation 3s linear infinite;
 }
 .special {
+    height: 150px;
+    width: 400px;
     font-family: "pinin", sans-serif;
     font-size: 38px;
     color: white;
+    text-align: center;
   }
 
 @keyframes loader-animation {
