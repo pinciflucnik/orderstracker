@@ -14,7 +14,7 @@ const loginTemp = (onLogin) => html`
                     <label for="exampleFormControlTextarea1" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control"  placeholder="password">
                 </div>
-                <button type="submit" class="btn btn-dark">Login</button>
+                <button type="submit" class="btn-login">Login</button>
             </form>
         </div>
 `

@@ -26,7 +26,7 @@ const registerTemp = (onRegister) => html`
                     <label for="exampleFormControlTextarea1" class="form-label">Branch</label>
                     <input type="text" name="branch" class="form-control"  placeholder="B21/B49">
                 </div>
-                <button type="submit" class="btn btn-dark">Register</button>
+                <button type="submit" class="btn-reg">Register</button>
             </form>
         </div>
 

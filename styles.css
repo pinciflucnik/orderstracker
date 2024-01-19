@@ -1,3 +1,4 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
 .wrapper {
     text-align: center;
 
@@ -28,18 +29,30 @@ body {
     background: #70747c;
     width: auto;
 }
-.loader {
-    border: 16px solid #ffffff;
-  border-top: 16px solid #000000dc; 
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin: auto;
+.container{
+    height: 50px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
 }
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.loader{
+    height: 20px;
+    width: 130px;
+    animation: loader-animation 3s linear infinite;
+}
+@keyframes loader-animation {
+    25% {
+        height: 30px;
+        width: 196px;
+    }    
+    50% {
+        height: 40px;
+        width: 260px;
+    }    
+    75% {
+        height: 30px;
+        width: 196px;
+    }    
 }
 
 .form-control {
@@ -55,30 +68,37 @@ body {
     margin-left: 90%;
 }
 
-.buttonClass {
-    font-size:15px;
-    font-family:Arial;
-    width:140px;
-    height:50px;
-    border-width:5px;
-    color:#fff;
-    border-color:#566963;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
-    box-shadow:inset 0px 1px 3px 0px #91b8b3;
-    text-shadow:inset 0px -1px 0px #2b665e;
-    background:linear-gradient(#768d87, #6c7c7c);
+.buttonClass, .btn {
+    background-color: #768d87;
     text-decoration: none;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: block;
   }
   
-  .buttonClass:hover {
-    background: linear-gradient(#6c7c7c, #768d87);
+  .done:hover {
+    color: rgb(66, 62, 62);
+    background-color: rgb(53, 129, 53);
+  }
+  .edit:hover {
+    color: rgb(66, 62, 62);
+    background-color: rgb(192, 136, 31);
   }
   
   .completed {
     padding: 0px 0px;
+  }
+  .btn-login, .btn-reg {
+    background-color: #768d87;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0, 0.5);
+  }
+  .btn-login:hover, .btn-reg:hover{
+    background-color: rgb(54, 52, 52);
+    border: 1px solid #768d87;
   }

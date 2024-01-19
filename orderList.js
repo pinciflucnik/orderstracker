@@ -74,8 +74,8 @@ const rowDanger = (order,onArrive,username,buttonTemp,isAdmin) => html`
 
 `
 const buttonTemp = (onArrive,order) => html`
-    <button @click=${onArrive} type="button" class="btn btn-secondary completed">Завърши</button>
-    <a href="/edit/${order.objectId}" class="buttonClass">Промени</a>`
+    <button @click=${onArrive} type="button" class="btn done"><i class="fa-solid fa-check"></i></button>
+    <a href="/edit/${order.objectId}" class="buttonClass edit"><i class="fa-solid fa-pencil"></i></a>`
 
 const noOrders = () => html`
     <h1>Все още няма поръчки!</h1>
