@@ -42,7 +42,7 @@ const addTemp = (onCreate) => html `
                     <label for="expected" class="form-label">Очакван на</label>
                     <input type="date" name="expected" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-dark">Добави поръчка</button>
+                <button type="submit" class="btn btn-add">Добави поръчка</button>
             </form>
         </div>
 

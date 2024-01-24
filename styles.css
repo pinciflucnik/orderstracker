@@ -102,15 +102,21 @@ body {
   .completed {
     padding: 0px 0px;
   }
-  .btn-login, .btn-reg {
+  .btn-login, .btn-reg, .btn-add {
     background-color: rgb(87, 87, 87);
     color: white;
     border-radius: 7px;
     border: 1px solid rgba(87, 87, 87, 0.5);
     padding: 5px 25px;
   }
-  .btn-login:hover, .btn-reg:hover{
+  .btn-login:hover, .btn-reg:hover, .btn-add:hover{
     background-color: rgb(211, 208, 180);
     border: 1px solid #768d87;
     color: rgb(87, 87, 87);
+  }
+  .btn-add {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 200px;
   }
