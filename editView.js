@@ -44,7 +44,7 @@ const editTemp = (onEdit, order, expectedDate) => html `
                     <label for="expected" class="form-label">Очакван на</label>
                     <input type="date" name="expected" class="form-control" value="${expectedDate}">
                 </div>
-                <button type="submit" class="btn btn-dark">Промени поръчка</button>
+                <button type="submit" class="btn btn-add">Промени поръчка</button>
             </form>
         </div>
 
