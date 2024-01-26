@@ -3,8 +3,8 @@ import page from "./page.mjs";
 
 export async function onArrive(e){
 
-    let data = e.target.parentElement.parentElement.querySelectorAll('td');
-    let id = e.target.parentElement.parentElement.getAttribute('id');
+    let data = e.target.parentElement.parentElement.parentElement.querySelectorAll('td');
+    let id = e.target.parentElement.parentElement.parentElement.getAttribute('id');
 
     let clientNumber = data[0].textContent;
     let clientName = data[1].textContent;
