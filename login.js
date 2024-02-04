@@ -4,17 +4,17 @@ import { userService } from "./userService.js";
 
 const loginTemp = (onLogin) => html`
         <div class="wrapper">
-            <h2>Login</h2>
+            <h3>Login</h3>
             <form @submit=${onLogin} class="form">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control"  placeholder="username">
+                    <input type="text" name="username" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control"  placeholder="password">
+                    <input type="password" name="password" class="form-control">
                 </div>
-                <button type="submit" class="btn-login">Влез</button>
+                <button type="submit" class="btn">Влез</button>
             </form>
         </div>
 `

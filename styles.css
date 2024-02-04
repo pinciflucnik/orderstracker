@@ -3,120 +3,254 @@
     font-family: "pinin";
     src: url(pininfarina.ttf);
 }
-.wrapper {
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font: 10px/1.4 Helvetica, sans-serif;
+    color: rgb(119, 78, 1);
+}
+body, table, input, button {
+    font: inherit;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+h1{ font-size: 3.0em; }
+h2{ font-size: 2.4em; }
+h3{ font-size: 1.8em; }
+h4{ font-size: 1.4em; }
+h5{ font-size: 1.2em; font-weight: bold; }
+h6{ font-size: 1em; font-weight: bold; }
+
+p, * + ul, * + ol {
+    padding-bottom: 1.5em;
+}
+
+ul, ol, blockquote {
+    padding-left: 1.5em;
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+body {
+    padding: 0 2em 0 2em ;
+    min-height: 100vh;
+    background: #ceb398;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main {
+    flex: 1 1 100%;
+    overflow: auto;
+}
+
+footer {
+    display: flex;
+    justify-content: right;
+    gap: 1em;
+    background: rgba(0,0,0,0.8);
+    color: orange;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    margin-top: auto;
+    margin-bottom: 1em;
+}
+h2 {
+    border-bottom: 2px solid rgb(5, 5, 5);
+}
+nav {
+    background: rgba(0,0,0,0.5);
+    padding: 0.3em;
+    border-radius: 0.3em;
+    margin-top: 1em;
+}
+nav a {
+    /* font-family: "Ubuntu Bold","Blogger Sans Bold"; */
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.2em;
+    border-radius: 0.3em;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em
 }
 #container {
-    background-color: #70747c;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
-.form-control {
-    size: 200px;
+.site-info {
     text-align: center;
+    flex: 1 0 100%;
 }
+
+.logo {
+    font-size: 1.5em;
+    font-family: pinin, sans-serif;
+}
+
+.wrapper {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.wrapper h2 {
+    flex: 1 0 100%;
+}
+
 .form {
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    align-items: center;
+    gap: 1em;
+    min-width: 80%;
+    background: rgba(0,0,0,0.5);
+    margin-bottom: 1em;
+    color: orange;
+    border-radius: 0.3em;
 }
-h1 {
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mb-3 input, .mb-3 select {
+    width: 15em;
     text-align: center;
+    border: 1px solid gray;
+    border-radius: 0.3em;
+    background: rgba(0,0,0,0.3);
 }
-.intro {
+.mb-3 select {
+    width: 13.5em;
+}
+.btn {
+    background: rgba(0,0,0,0.8);
+    width: 10em;
+    border: 1px solid rgba(255, 175, 2, 0.3);
+    border-radius: 0.3em;
     text-align: center;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.sign {
-    text-align: end;
+.btn:hover {
+    box-shadow: 0 0 1em orange inset;
+    background: rgba(0,0,0,0.3);
 }
-td {
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    font-size: 0.4em;
+}
+.table th {
+    border: 1px solid black;
+    padding: 0.5em 1em;
     text-align: center;
+    background: rgba(0,0,0,0.8);
+    color: orange;
 }
-body {
-    background: #70747c;
-    width: auto;
-}
-.container{
-    height: 150px;
-    width: 300px;
-    margin: auto;
+
+.table td {
+    padding: 0.5em 1em;
     text-align: center;
+    color: rgba(255, 175, 2, 0.8);
 }
+.table tbody tr:nth-child(odd):not(.table-danger){
+    background: rgba(0,0,0,0.5);
+}
+.table tbody tr:nth-child(even):not(.table-danger){
+    background: rgba(0,0,0,0.8);
+}
+.table tbody .table-danger {
+    background: rgb(185, 0, 0);
+}
+.btn-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.btn-box .btn {
+    width: 3.5em;
+    height: 3.5em;
+    background: rgb(0, 0, 0);
+    border: 0.1px solid rgba(0, 0, 0, 0.2);
+    margin: 1em;
+}
+.btn-box .btn.edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form > select > span.color {
+    color: orange;
+    background: orange;
+}
+@media (min-width: 800px){
+    html {
+        font-size: 14px;
+    }
+    .table {font-size: 0.9em;}
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .table tbody .table-danger td{
+        color: white;
+        text-shadow: 0 0 1em black;
+    }
+    .btn-box {
+        flex-direction: row;
+    }
+    .btn-box .btn {
+        width: 2em;
+        height: 2em;
+    }
+}
+
+
 .loader{
-    height: 20px;
-    width: 130px;
+    height: 1.5em;
+    width: 10em;
     animation: loader-animation 3s linear infinite;
 }
 .special {
-    height: 150px;
-    width: 400px;
     font-family: "pinin", sans-serif;
-    font-size: 38px;
-    color: white;
+    font-size: 3em;
+    color: rgba(0,0,0,0.5);;
     text-align: center;
-  }
+}
 
 @keyframes loader-animation {
     25% {
-        font-size: 72px;
+        transform: rotate(90deg);
     }    
     50% {
-        font-size: 110px;
+        transform: rotate(180deg);
     }    
     75% {
-        font-size: 72px;
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }    
 }
-
-.form-control {
-    width: 30%;
-    margin: auto;
-}
-.form-select {
-    width: 30%;
-    margin: auto;
-    text-align: center;
-}
-.logo {
-    margin-left: 90%;
-}
-
-.buttonClass, .btn {
-    background-color: #768d87;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    padding: 3px;
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    display: block;
-  }
-  
-  .done:hover {
-    color: rgb(66, 62, 62);
-    background-color: rgb(53, 129, 53);
-  }
-  .edit:hover {
-    color: rgb(66, 62, 62);
-    background-color: rgb(192, 136, 31);
-  }
-  
-  .completed {
-    padding: 0px 0px;
-  }
-  .btn-login, .btn-reg, .btn-add {
-    background-color: rgb(87, 87, 87);
-    color: white;
-    border-radius: 7px;
-    border: 1px solid rgba(87, 87, 87, 0.5);
-    padding: 5px 25px;
-  }
-  .btn-login:hover, .btn-reg:hover, .btn-add:hover{
-    background-color: rgb(211, 208, 180);
-    border: 1px solid #768d87;
-    color: rgb(87, 87, 87);
-  }
-  .btn-add {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
-    width: 200px;
-  }

@@ -43,9 +43,6 @@ function myRender(template){
 function navUpdate(ctx, next){
     const navTemp = () => html`
             <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 ${user? userTemp(): guestTemp()}
             </div>
@@ -53,17 +50,17 @@ function navUpdate(ctx, next){
     `
     const guestTemp = () => html`
             <div class="navbar-nav">
-                <a class="nav-link" href="/login">Влез</a>
+                <div class="btn"><a class="nav-link" href="/login">Влез</a></div>
                 <!-- <a class="nav-link" href="/register">Регистрация</a> -->
             </div>
 
     `
     const userTemp = () => html`
             <div class="navbar-nav">
-                <a class="nav-link" href="/addOrder">Нова поръчка</a>
-                <a class="nav-link" href="/orders">Списък с незавършени поръчки</a>
-                <a class="nav-link" href="/completed">Списък със завършени поръчки</a>
-                <a class="nav-link" href="/logout">Излез</a>
+               <div class="btn"><a class="nav-link" href="/addOrder">Нова поръчка</a></div>
+                <div class="btn"><a class="nav-link" href="/orders">Незавършени поръчки</a></div>
+                <div class="btn"><a class="nav-link" href="/completed">Завършени поръчки</a></div>
+                <div class="btn"><a class="nav-link" href="/logout">Излез</a>
             </div>
 
     `

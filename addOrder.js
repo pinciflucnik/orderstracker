@@ -9,30 +9,30 @@ const addTemp = (onCreate) => html `
             <form @submit=${onCreate} class="form">
                 <div class="mb-3">
                     <label for="clientNumber" class="form-label">Клиентски номер</label>
-                    <input type="text" name="clientNumber" class="form-control"  placeholder="клиентски номер">
+                    <input type="text" name="clientNumber" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="clientName" class="form-label">Клиент</label>
-                    <input type="text" name="clientName" class="form-control"  placeholder="име на фирма">
+                    <input type="text" name="clientName" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="articleNumber" class="form-label">Артикул</label>
-                    <input type="text" name="articleNumber" class="form-control"  placeholder="артикулен номер">
+                    <input type="text" name="articleNumber" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="quantity" class="form-label">Количество</label>
-                    <input type="number" name="quantity" class="form-control"  placeholder="0">
+                    <input type="number" name="quantity" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="orderedFrom" class="form-label">Поръчан през</label>
                     <select class="form-select" name="orderedFrom" aria-label="Default select example">
-                    <option>Marketplace</option>
-                    <option>JIRA ticketing service</option>
+                    <option><span class="color">Marketplace</span></option>
+                    <option><span class="color">JIRA ticketing service</span></option>
                     </select>                
                 </div>
                 <div class="mb-3">
                     <label for="orderNumber" class="form-label">Номер поръчка/тикет</label>
-                    <input type="text" name="orderNumber" class="form-control"  placeholder="номер на поръчка или тикет">
+                    <input type="text" name="orderNumber" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="orderDate" class="form-label">Поръчан на</label>
@@ -42,7 +42,7 @@ const addTemp = (onCreate) => html `
                     <label for="expected" class="form-label">Очакван на</label>
                     <input type="date" name="expected" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-add">Добави поръчка</button>
+                <button type="submit" class="btn">Добави поръчка</button>
             </form>
         </div>
 

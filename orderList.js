@@ -39,7 +39,7 @@ const orderTemp = (order,onArrive,username,buttonTemp,isAdmin) => html`
                     <td>${order.orderDate.slice(3,15)}</td>
                     <td>${order.expected.slice(3,15)}</td>
                     <td>${order.creator}</td>
-                    ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
+                    ${order.creator == username || isAdmin ? html`<td class="btn-box">${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
                 </tr>
 
 `
@@ -54,7 +54,7 @@ const rowWarning = (order,onArrive,username,buttonTemp,isAdmin) => html`
         <td>${order.orderDate.slice(3,15)}</td>
         <td>${order.expected.slice(3,15)}</td>
         <td>${order.creator}</td>
-        ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
+        ${order.creator == username || isAdmin ? html`<td class="btn-box">${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
     </tr>
 `
 
@@ -69,13 +69,13 @@ const rowDanger = (order,onArrive,username,buttonTemp,isAdmin) => html`
         <td>${order.orderDate.slice(3,15)}</td>
         <td>${order.expected.slice(3,15)}</td>
         <td>${order.creator}</td>
-        ${order.creator == username || isAdmin ? html`<td>${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
+        ${order.creator == username || isAdmin ? html`<td class="btn-box">${buttonTemp(onArrive,order)}</td>`: html`<td></td>`}
     </tr>
 
 `
 const buttonTemp = (onArrive,order) => html`
     <button @click=${onArrive} type="button" class="btn done"><i class="fa-solid fa-check"></i></button>
-    <a href="/edit/${order.objectId}" class="buttonClass edit"><i class="fa-solid fa-pencil"></i></a>`
+    <a href="/edit/${order.objectId}" class="btn edit"><i class="fa-solid fa-pencil"></i></a>`
 
 const noOrders = () => html`
     <h1>Все още няма поръчки!</h1>
